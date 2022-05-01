@@ -13,6 +13,7 @@ import useSpotify from "../hooks/useSpotify";
 function Sidebar(){
     const spotifyApi = useSpotify()
     const {data: session, status} = useSession();
+    const [playlists, setPlaylists] = useState([]);
 
     useEffect(() => {
         if(spotifyApi.getAccessToken()){
