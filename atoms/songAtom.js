@@ -9,3 +9,16 @@ export const isPlayingState = atom({
     key: "isPlayingState",
     default: false,
 });
+
+export const currentTrackUriState = atom({
+    key: "currentTrackUriState",
+    default: null,
+})
+
+export const displayComponentsState = atom({
+    key: "displayComponentsState",
+    default: {
+        center:true,
+        search:false,
+    },
+})
