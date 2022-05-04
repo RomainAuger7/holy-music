@@ -39,7 +39,7 @@ useEffect(() => {
 return () =>  cancel = true
 }, [search, spotifyApi.getAccessToken()])
 
-return <Container className='d-flex flex-column py-2' style={{height: "100vh"}}>
+return <Container className='d-flex flex-column py-2 overflow-y-scroll scrollbar-hide' style={{height: "100vh"}}>
       <Form.Control 
         type="Search" 
         placeholder="Search songs/ Artists" 

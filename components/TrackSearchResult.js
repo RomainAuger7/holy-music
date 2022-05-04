@@ -1,11 +1,9 @@
 import React from 'react'
 import { useRecoilState } from 'recoil'
 import { currentTrackUriState } from '../atoms/songAtom'
-import useSpotify from '../hooks/useSpotify'
 
 export default function TrackSearchResult({track}) {
 
-    const spotifyApi = useSpotify()
     const [currentTrackUri, setCurrentTrackUri] = useRecoilState(currentTrackUriState)
     const playSong = () => {
         setCurrentTrackUri(track.uri)
