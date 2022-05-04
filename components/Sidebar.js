@@ -20,7 +20,6 @@ function Sidebar(){
     const [playlistId, setPlaylistId] = useRecoilState(playlistIdState);
     const [displayComponents, setDisplayComponents] = useRecoilState(displayComponentsState)
 
-
     useEffect(() => {
         if(spotifyApi.getAccessToken()){
             spotifyApi.getUserPlaylists().then((data) => {
@@ -28,8 +27,6 @@ function Sidebar(){
             })
         }
     }, [session, spotifyApi])
-
-    console.log(playlists)
 
     return (
         <div className="text-gray-500 p-5 text-xs lg:text-sm border-r border-l-gray-900 overflow-y-scroll
@@ -64,11 +61,16 @@ function Sidebar(){
                 <hr className="border-t-[0.1px] border-gray-900"/>
 
                 {playlists.map((playlist) => (
-                    <p key={playlist.id} onClick={() => setPlaylistId(playlist.id)} 
+                    <p key={playlist.id} onClick={() => {
+                        setPlaylistId(playlist.id);
+                        setDisplayComponents({
+                            center: true,
+                            search: false,
+                        })
+                    }}
                     className="cursor-pointer hover:text-white">{playlist.name}</p>
                 ))}
                 
-
             </div>
         </div>
     )

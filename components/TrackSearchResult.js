@@ -12,14 +12,15 @@ export default function TrackSearchResult({track}) {
     }
 
   return(
-    <div className="flex m-2 align-items-center cursor-pointer"
+    <div className="grid grid-cols-2 text-gray-400 py-4 px-5 hover:bg-gray-900 rounded-lg cursor-pointer"
             onClick={playSong}>
-        <img src={track.albumUrl} style={{width: '64px' , height: "64px"}} alt=""/>
-        <div className='ml-3'>
-            <div>{track.title}</div>
+        <div className="flex items-center space-x-4">
+          <img src={track.albumUrl} style={{width: '64px' , height: "64px"}} alt=""/>
+          <div className='ml-3'>
+            <p className="w-36 lg:w-64 text-white truncate">{track.title}</p>
             <div className='text-muted'>{track.artist}</div>
+          </div>
         </div>
-
     </div>
   ) 
 }
